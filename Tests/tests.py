@@ -17,4 +17,6 @@ def browser():
 
 
 def test_login(browser):
-    HomePage.navigate(browser, 'https://www.empik.com/')
+    HomePage.navigate(browser, 'https://www.empik.com/') \
+        .goto_login_page() \
+        .login()
