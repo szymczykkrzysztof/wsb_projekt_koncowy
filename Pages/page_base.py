@@ -32,8 +32,8 @@ class PageBase:
     def enter_txt(self, locator, text):
         self.find_element(locator).send_keys(text)
 
-    def wait_until_visibility_of_element_located(self, locator):
-        WebDriverWait(self.driver, timeout=5).until(EC.presence_of_element_located(locator))
+    def wait_until_visibility_of_element_located(self, locator, timeout=10):
+        WebDriverWait(self.driver, timeout=timeout).until(EC.presence_of_element_located(locator))
 
     def check_title(self, title):
         assert self.get_title() == title
