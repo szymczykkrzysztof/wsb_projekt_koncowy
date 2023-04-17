@@ -14,10 +14,18 @@ class HomePage(PageBase):
         return page
 
     def goto_login_page(self):
-        action = ActionChains(self.driver)
-        action.move_to_element(
-            self.find_element(Selectors.HomePage.menu_item_login, 360))
-        action.perform()
+        self.hover_over_main_menu(Selectors.HomePage.menu_item_login)
         self.click_on(Selectors.HomePage.menu_item_login, 360)
         from Pages.login_page import LoginPage
         return LoginPage(self.driver, self.base_url)
+
+    def logout(self):
+        self.hover_over_main_menu(Selectors.HomePage.logged_user_menu)
+        self.click_on(Selectors.HomePage.menu_item_logout, 360)
+        return self
+
+    def goto_user_details(self):
+        self.hover_over_main_menu(Selectors.HomePage.logged_user_menu)
+        self.click_on(Selectors.HomePage.menu_item_my_profile, 360)
+        from Pages.account_details_page import AccountDetailsPage
+        return AccountDetailsPage(self.driver, self.base_url)

@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -38,3 +39,12 @@ class PageBase:
     def check_title(self, title):
         assert self.get_title() == title
         return self
+
+    def hover_over_main_menu(self, menu_item):
+        action = ActionChains(self.driver)
+        action.move_to_element(
+            self.find_element(menu_item, 360))
+        action.perform()
+        return self
+
+
