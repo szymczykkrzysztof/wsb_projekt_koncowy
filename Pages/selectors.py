@@ -16,6 +16,8 @@ class Selectors:
         given_email = (By.XPATH, "//div[@class='truncate']")
         password = (By.ID, "user-password")
         btn_login = (By.XPATH, "//button[text()='ZALOGUJ SIĘ']")
+        incorrect_email_message = (By.XPATH, "//form[@id='user-login-form']/span[@class='error show']")
+        incorrect_password_message = (By.XPATH, "//form[@id='user-login-form']//div[@class='infoBox type-error top-space']/div")
 
     class AccountDetailsPage:
         account_data = (By.XPATH, "//a[@href='/twoje-konto/twoje-dane' and @class='active']")

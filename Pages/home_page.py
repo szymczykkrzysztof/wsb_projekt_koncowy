@@ -20,6 +20,10 @@ class HomePage(PageBase):
         from Pages.login_page import LoginPage
         return LoginPage(self.driver, self.base_url)
 
+    def switch_to_login_page(self):
+        from Pages.login_page import LoginPage
+        return LoginPage(self.driver, self.base_url)
+
     def logout(self):
         self.hover_over_main_menu(Selectors.HomePage.logged_user_menu)
         WebDriverWait(self.driver, 60).until(
