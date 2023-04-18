@@ -1,6 +1,7 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from Pages.page_base import PageBase
 from Pages.selectors import Selectors
 
@@ -21,6 +22,8 @@ class HomePage(PageBase):
 
     def logout(self):
         self.hover_over_main_menu(Selectors.HomePage.logged_user_menu)
+        WebDriverWait(self.driver, 60).until(
+            EC.element_to_be_clickable(Selectors.HomePage.menu_item_logout))
         self.click_on(Selectors.HomePage.menu_item_logout, 360)
         return self
 
