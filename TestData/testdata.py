@@ -14,3 +14,8 @@ class TestData:
     full_valid_date_of_birth = "09-04-1970"
     invalid_email_message = "Niepoprawny adres email"
     invalid_password_message = "Niepoprawne dane uwierzytelniające."
+    top_gun_maverick = "top gun maverick"
+    kindle_paperwhite = "kindle paperwhite 5"
+    festung_breslau = "festung breslau"
+    empty_cart_message = "Twój koszyk jest pusty"
+    empty_cart = "Pusty koszyk"
