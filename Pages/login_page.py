@@ -35,3 +35,5 @@ class LoginPage(PageBase):
         validation_message = self.find_element(Selectors.LoginPage.incorrect_password_message).text
         assert validation_message == TestData.invalid_password_message
         return self
+
+
