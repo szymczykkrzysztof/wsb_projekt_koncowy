@@ -7,7 +7,7 @@ from Pages.selectors import Selectors
 
 class CartPage(PageBase):
     def validate_products_price_in_cart(self):
-        sleep(2)
+        sleep(5)
         prices = self.find_elements(Selectors.CartPage.prices, 360)
         purchase_price = self.find_element(Selectors.CartPage.purchase_price, 360).text
         purchase_price = purchase_price.replace(" zł", "").replace(",", ".")
