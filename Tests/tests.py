@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
 from Pages.home_page import HomePage
@@ -9,7 +10,7 @@ from TestData.testdata import TestData
 
 @pytest.fixture()
 def browser():
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     yield driver
     driver.close()
     driver.quit()
